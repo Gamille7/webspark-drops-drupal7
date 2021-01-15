@@ -144,18 +144,17 @@ body {
   #content {
     .region-content {
       #page-page {
-        .ui-tabs-panel {
-          p {
-            font-size: 1.25rem;
-          }
-        }
         ul.ui-tabs-nav {
           li {
             border: none;
             &:hover {
-              border-bottom: 0.3125em solid $ws2-maroon;
               a {
                 color: $ws2-maroon;
+                @include ws2-element-transition-global();
+                &:after {
+                  width: 100%;
+                  @include ws2-element-transition-global();
+                }
               }
             }
             &:before {
@@ -164,9 +163,22 @@ body {
             a {
               border: none;
               color: $ws2-gray-darkest;
+              font-weight: bold;
+              @include ws2-element-transition-global();
+              &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                height: 0.5rem;
+                background-color: $ws2-maroon;
+                width: 0;
+                @include ws2-element-transition-global();
+                bottom: 0;
+                left: -0.5rem;
+                margin-left: 0.5rem;
+              }
             }
             &.ui-state-active {
-              border-bottom: 0.3125em solid $ws2-maroon;
               a {
                 color: $ws2-maroon;
               }
