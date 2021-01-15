@@ -165,6 +165,9 @@ body {
               color: $ws2-gray-darkest;
               font-weight: bold;
               @include ws2-element-transition-global();
+              &:focus {
+                outline: none;
+              }
               &:after {
                 content: '';
                 position: absolute;
